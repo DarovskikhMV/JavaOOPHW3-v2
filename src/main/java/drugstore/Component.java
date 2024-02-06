@@ -28,10 +28,13 @@ public  abstract class Component implements Comparable<Component> {
 
     @Override
     public int compareTo(Component o) {
-        return this.power.compareTo(o.power);
+        return this.getVolume().compareTo(o.getVolume());
     }
     //второй способ
 //        if (this.power < o.power) return -1;
 //        else if (this.power > o.power) return 1;
 //        else return 0;
 }
+
+
+

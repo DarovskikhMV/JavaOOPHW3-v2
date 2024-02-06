@@ -41,32 +41,45 @@ public class DrugMain {
 
         Component aspirine = new Aspirine("Aspirine", 6D, 4);
         Component otrivin = new Otrivin("Otrivin", 4.2D, 7);
-        Component nurofen = new Nurofen("Nurofen", 8.0D, 8);
-
-        List<Component> components2  = new ArrayList<>();
-
-        components2.add(aspirine);
-        components2.add(otrivin);
-        components2.add(nurofen);
+        Component nurofen = new Nurofen("Nurofen", 8.0D, 15);
 
         Pharmacy p4 = new Pharmacy();
-        p4.addComponents(aspirine, nurofen);
+        p4.addComponents(aspirine, otrivin);
         Pharmacy p5 = new Pharmacy();
-        p5.addComponents(otrivin, aspirine);
+        p5.addComponents(nurofen);
         Pharmacy p6 = new Pharmacy();
-        p6.addComponents(water,aspirine,azitronite,nurofen);
+        p6.addComponents(water, nurofen, otrivin);
 
-        Comparator<Component> power = new Pharmacy();
-        components2.sort(power);
-        System.out.println(components2);
+        List<Pharmacy> list = new ArrayList<>();
+        list.add(p4);
+        list.add(p5);
+        list.add(p6);
+        System.out.println(list);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        Comparator<Component> weight = new WeightCompare();
-        components2.sort(weight);
-        System.out.println(components2);
+        Collections.sort(list);
+        System.out.println(list);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        Comparator<Component> volume = new VolumeCompare();
-        components2.sort(volume);
-        System.out.println(components2);
+        list.sort(Pharmacy::compareToVolume);
+        System.out.println(list);
+
+
+//        Comparator<Component> power = new Pharmacy();
+//        components2.sort(power);
+//        System.out.println(components2);
+//        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//        Comparator<Component> weight = new WeightCompare();
+//        components2.sort(weight);
+//        System.out.println(components2);
+//        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//        Comparator<Component> volume = new VolumeCompare();
+//        components2.sort(volume);
+
+//
+//        System.out.println(c1);
+//        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//        System.out.println(c1);
+//        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     }
 
 }
