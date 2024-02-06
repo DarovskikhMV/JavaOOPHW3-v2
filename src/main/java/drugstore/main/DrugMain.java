@@ -1,5 +1,8 @@
-package drugstore;
+package drugstore.main;
 
+import drugstore.Component;
+import drugstore.Pharmacy;
+import drugstore.Pharmacy2;
 import drugstore.components.*;
 
 import java.util.*;
